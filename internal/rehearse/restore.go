@@ -57,7 +57,10 @@ func copyTree(src, dest string) error {
 			return fmt.Errorf("symlink refused in recovery artifact: %s", rel)
 		}
 		if d.IsDir() {
-			return os.MkdirAll(out, info.Mode().Perm())
+			if err := os.MkdirAll(out, info.Mode().Perm()); err != nil {
+				return err
+			}
+			return os.Chmod(out, info.Mode().Perm())
 		}
 		if !info.Mode().IsRegular() {
 			return fmt.Errorf("non-regular file refused in recovery artifact: %s", rel)
