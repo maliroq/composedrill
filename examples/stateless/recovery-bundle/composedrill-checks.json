@@ -1,0 +1,1 @@
+{"version":1,"checks":[{"name":"homepage","service":"web","type":"http","port":80,"path":"/","expected_status":200,"timeout_seconds":10},{"name":"web-socket","service":"web","type":"tcp","port":80,"timeout_seconds":10}]}

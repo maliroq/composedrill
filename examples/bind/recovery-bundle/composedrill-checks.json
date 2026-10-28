@@ -1,0 +1,1 @@
+{"version":1,"checks":[{"name":"restored-page","service":"web","type":"http","port":80,"path":"/","expected_status":200,"timeout_seconds":10}]}

@@ -1,0 +1,1 @@
+{"version":1,"checks":[{"name":"probe-row","service":"db","type":"command","command":["psql","-U","app","-d","app","-tAc","SELECT marker FROM recovery_probe WHERE id=1"],"timeout_seconds":10,"expect_contains":"backup-restored"}]}

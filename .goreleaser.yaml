@@ -1,0 +1,39 @@
+version: 2
+project_name: composedrill
+
+builds:
+  - id: composedrill
+    main: ./cmd/composedrill
+    binary: composedrill
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    flags:
+      - -trimpath
+      - -buildvcs=false
+
+archives:
+  - id: default
+    formats:
+      - tar.gz
+    name_template: >-
+      {{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}
+    files:
+      - LICENSE
+      - README.md
+      - docs/KNOWN_LIMITATIONS.md
+      - docs/SUPPORT_MATRIX.md
+
+checksum:
+  name_template: checksums.txt
+
+changelog:
+  use: git
+
+release:
+  prerelease: auto

@@ -1,0 +1,22 @@
+name: Bug report
+description: Report incorrect scan/rehearsal behavior
+body:
+  - type: textarea
+    attributes:
+      label: What happened?
+      description: Do not paste secrets or production backup contents.
+    validations: {required: true}
+  - type: textarea
+    attributes:
+      label: Expected behavior
+    validations: {required: true}
+  - type: textarea
+    attributes:
+      label: Minimal Compose / recovery fixture
+      description: Prefer a synthetic reproducer.
+  - type: input
+    attributes:
+      label: ComposeDrill version
+  - type: input
+    attributes:
+      label: Docker / Compose versions

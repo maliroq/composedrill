@@ -1,0 +1,16 @@
+{
+  "run_id": "20261026T150000Z-a1b2c3",
+  "status": "FAIL",
+  "recovery_project_name": "composedrill-20261026-150000-a1b2c3",
+  "services": [
+    {
+      "service": "app",
+      "configuration": "PASS",
+      "data_restore": "PASS",
+      "startup": "PASS",
+      "health": "FAIL",
+      "reason": "container healthcheck reported unhealthy"
+    }
+  ],
+  "cleanup_status": "PASS"
+}

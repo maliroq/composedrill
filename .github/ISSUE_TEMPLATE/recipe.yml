@@ -1,0 +1,43 @@
+name: Application recovery fixture
+description: Add a recovery fixture for a real self-hosted stack using synthetic data
+body:
+  - type: input
+    attributes:
+      label: Application
+      description: Which self-hosted application or persistence pattern does this fixture represent?
+    validations: {required: true}
+  - type: textarea
+    attributes:
+      label: Persistent state
+      description: Volumes, binds, databases, secrets/config required for recovery.
+    validations: {required: true}
+  - type: textarea
+    attributes:
+      label: Application-consistent backup method
+      description: How should the backup artifact be captured safely?
+    validations: {required: true}
+  - type: textarea
+    attributes:
+      label: Recovery proof
+      description: What check proves restored state or user-visible function rather than only process startup?
+    validations: {required: true}
+  - type: dropdown
+    attributes:
+      label: Expected outcome
+      options:
+        - PASS
+        - Intentional FAIL
+    validations: {required: true}
+  - type: textarea
+    attributes:
+      label: Failure this catches
+      description: What real recovery mistake would this fixture detect?
+    validations: {required: true}
+  - type: checkboxes
+    attributes:
+      label: Fixture hygiene
+      options:
+        - label: The fixture will contain only synthetic data and no real secrets or production paths.
+          required: true
+        - label: Any new Docker resource pattern will include cleanup/isolation assertions.
+          required: true

@@ -1,0 +1,1 @@
+{"version":1,"checks":[{"name":"sqlite-file","service":"app","type":"file-exists","file":"/data/app.db","timeout_seconds":5}]}

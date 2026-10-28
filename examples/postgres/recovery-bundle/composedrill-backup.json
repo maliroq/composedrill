@@ -1,0 +1,31 @@
+{
+  "format": "composedrill-recovery-bundle",
+  "version": 1,
+  "created_at": "2026-10-26T14:00:00Z",
+  "compose_sha256": "20f2d9a46995986c4a2a8793726b1a06076120720e140f1e60be3af39f311097",
+  "entries": [
+    {
+      "kind": "compose",
+      "artifact": "compose.yaml",
+      "sha256": "20f2d9a46995986c4a2a8793726b1a06076120720e140f1e60be3af39f311097"
+    },
+    {
+      "kind": "env",
+      "artifact": ".env",
+      "sha256": "296565daf3c01add79f3737e57ae299aba04cef58698643514b9122b9b2ca10e"
+    },
+    {
+      "kind": "database",
+      "service": "db",
+      "engine": "postgresql",
+      "strategy": "postgres-sql",
+      "artifact": "database.sql",
+      "sha256": "43d955b09496f2bb0f49819f7890542da242738d1590d3bd167f35341931f285"
+    },
+    {
+      "kind": "checks",
+      "artifact": "composedrill-checks.json",
+      "sha256": "3a72c3d6e1e932822453181828f0436ea943cfbaa3140fe5e3ea409a947bb619"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">ComposeDrill GitHub social card</title>
+  <desc id="desc">ComposeDrill tagline and recovery result showing restore and startup pass while health fails.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111C"/>
+      <stop offset="1" stop-color="#0B2033"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000" flood-opacity=".28"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="640" fill="url(#bg)"/>
+  <circle cx="1100" cy="-80" r="330" fill="#0EA5E9" opacity=".06"/>
+  <circle cx="1030" cy="680" r="300" fill="#5EE59D" opacity=".04"/>
+
+  <g transform="translate(74 98) scale(.56)">
+    <g fill="#0EA5E9">
+      <path d="M108 137 246 79l113 46-138 60z" fill="#38BDF8"/>
+      <path d="M108 137v73l113 47v-72z"/>
+      <path d="m221 185 138-60v72l-138 60z" fill="#0369A1"/>
+      <path d="M82 242l139-58 112 46-138 60z" fill="#38BDF8"/>
+      <path d="M82 242v73l113 47v-72z"/>
+      <path d="m195 290 138-60v72l-138 60z" fill="#0369A1"/>
+      <path d="M108 347l138-58 112 46-137 60z" fill="#38BDF8"/>
+      <path d="M108 347v73l113 47v-72z"/>
+      <path d="m221 395 137-60v72l-137 60z" fill="#0369A1"/>
+    </g>
+    <path d="M380 169c52 28 77 89 59 145-13 39-43 70-81 84" fill="none" stroke="#5EE59D" stroke-width="28" stroke-linecap="round"/>
+    <path d="m337 385 56 4-28 49z" fill="#5EE59D"/>
+  </g>
+
+  <text x="330" y="185" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="66" font-weight="780" fill="#F8FAFC">Compose<tspan fill="#38BDF8">Drill</tspan></text>
+  <text x="333" y="260" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="42" font-weight="620" fill="#F8FAFC">Your backup passed.</text>
+  <text x="333" y="313" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="42" font-weight="620" fill="#F8FAFC">Will your app?</text>
+
+  <g transform="translate(842 126)" filter="url(#shadow)">
+    <rect width="350" height="388" rx="28" fill="#0A1623" stroke="#25445F" stroke-width="2"/>
+    <text x="42" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="29" fill="#CBD5E1">RESTORE</text>
+    <text x="270" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="34" font-weight="700" fill="#5EE59D">PASS</text>
+    <text x="42" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="29" fill="#CBD5E1">START</text>
+    <text x="270" y="142" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="34" font-weight="700" fill="#5EE59D">PASS</text>
+    <text x="42" y="206" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="29" fill="#CBD5E1">HEALTH</text>
+    <text x="270" y="206" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="34" font-weight="700" fill="#FB7185">FAIL</text>
+    <line x1="42" y1="250" x2="308" y2="250" stroke="#334155" stroke-width="2"/>
+    <text x="42" y="315" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="29" font-weight="700" fill="#F8FAFC">RESULT</text>
+    <text x="236" y="315" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="34" font-weight="800" fill="#FB7185">FAIL</text>
+  </g>
+</svg>

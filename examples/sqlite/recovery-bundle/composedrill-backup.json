@@ -1,0 +1,25 @@
+{
+  "format": "composedrill-recovery-bundle",
+  "version": 1,
+  "created_at": "2026-10-26T14:00:00Z",
+  "compose_sha256": "00d66e2cda34716916c47ee7cbfd0ea784275b348b3cf933d15c15ab3aa8feb7",
+  "entries": [
+    {
+      "kind": "compose",
+      "artifact": "compose.yaml",
+      "sha256": "00d66e2cda34716916c47ee7cbfd0ea784275b348b3cf933d15c15ab3aa8feb7"
+    },
+    {
+      "kind": "bind",
+      "service": "app",
+      "target": "/data",
+      "artifact": "bind-data",
+      "sha256": "2b635d1d4e12f9399a7f21b2132ca06ffdcd18a4526a97ed7080ec67ba00ca71"
+    },
+    {
+      "kind": "checks",
+      "artifact": "composedrill-checks.json",
+      "sha256": "4171a148bb0a01a87a40685595799137178e42b515d79ef7937358acdc21a2c6"
+    }
+  ]
+}

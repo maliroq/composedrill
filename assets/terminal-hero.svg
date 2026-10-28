@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">ComposeDrill broken recovery terminal demo</title>
+  <desc id="desc">A ComposeDrill drill where the backup and startup pass but application health fails.</desc>
+  <rect width="1280" height="720" rx="28" fill="#07111C"/>
+  <rect x="1" y="1" width="1278" height="718" rx="27" fill="none" stroke="#22384B" stroke-width="2"/>
+  <circle cx="42" cy="42" r="9" fill="#FB7185"/>
+  <circle cx="72" cy="42" r="9" fill="#FACC15"/>
+  <circle cx="102" cy="42" r="9" fill="#5EE59D"/>
+  <line x1="0" y1="78" x2="1280" y2="78" stroke="#172A3B" stroke-width="2"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" font-size="27">
+    <text x="42" y="126" fill="#94A3B8">$</text>
+    <text x="72" y="126" fill="#38BDF8" font-weight="700">composedrill</text>
+    <text x="278" y="126" fill="#E2E8F0">rehearse --backup examples/broken/recovery-bundle examples/broken</text>
+
+    <text x="42" y="184" fill="#F8FAFC" font-weight="700">ComposeDrill recovery drill</text>
+    <text x="42" y="222" fill="#94A3B8">run: 20261027T161328Z-5b8265be5a9a</text>
+
+    <text x="42" y="286" fill="#F8FAFC" font-weight="700">SUMMARY</text>
+    <text x="42" y="330" fill="#CBD5E1">BACKUP / MANIFEST</text>
+    <text x="440" y="330" fill="#5EE59D" font-weight="700">PASS</text>
+    <text x="42" y="372" fill="#CBD5E1">DATA RESTORE</text>
+    <text x="440" y="372" fill="#5EE59D" font-weight="700">PASS</text>
+    <text x="42" y="414" fill="#CBD5E1">CONTAINER STARTUP</text>
+    <text x="440" y="414" fill="#5EE59D" font-weight="700">PASS</text>
+    <text x="42" y="456" fill="#CBD5E1">APPLICATION HEALTH</text>
+    <text x="440" y="456" fill="#FB7185" font-weight="700">FAIL</text>
+
+    <text x="42" y="522" fill="#F8FAFC" font-weight="700">RESULT</text>
+    <text x="440" y="522" fill="#FB7185" font-weight="800">FAIL</text>
+
+    <text x="42" y="580" fill="#94A3B8">APP reason:</text>
+    <text x="240" y="580" fill="#E2E8F0">unhealthy</text>
+    <text x="42" y="626" fill="#94A3B8">CLEANUP</text>
+    <text x="440" y="626" fill="#5EE59D" font-weight="700">PASS</text>
+    <text x="42" y="670" fill="#64748B">evidence: .composedrill/evidence/20261027T161328Z-5b8265be5a9a.json</text>
+  </g>
+</svg>

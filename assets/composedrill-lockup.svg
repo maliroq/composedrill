@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 300" role="img" aria-labelledby="title desc">
+  <title id="title">ComposeDrill</title>
+  <desc id="desc">ComposeDrill wordmark with stacked-container recovery mark.</desc>
+  <rect width="1080" height="300" rx="36" fill="#07111C"/>
+  <g transform="translate(34 22) scale(.5)">
+    <g fill="#0EA5E9">
+      <path d="M108 137 246 79l113 46-138 60z" fill="#38BDF8"/>
+      <path d="M108 137v73l113 47v-72z"/>
+      <path d="m221 185 138-60v72l-138 60z" fill="#0369A1"/>
+      <path d="M82 242l139-58 112 46-138 60z" fill="#38BDF8"/>
+      <path d="M82 242v73l113 47v-72z"/>
+      <path d="m195 290 138-60v72l-138 60z" fill="#0369A1"/>
+      <path d="M108 347l138-58 112 46-137 60z" fill="#38BDF8"/>
+      <path d="M108 347v73l113 47v-72z"/>
+      <path d="m221 395 137-60v72l-137 60z" fill="#0369A1"/>
+    </g>
+    <path d="M380 169c52 28 77 89 59 145-13 39-43 70-81 84" fill="none" stroke="#5EE59D" stroke-width="28" stroke-linecap="round"/>
+    <path d="m337 385 56 4-28 49z" fill="#5EE59D"/>
+  </g>
+  <text x="315" y="144" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="86" font-weight="750" fill="#F8FAFC">Compose<tspan fill="#38BDF8">Drill</tspan></text>
+  <text x="320" y="205" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="30" font-weight="550" fill="#CBD5E1">Your backup passed. Will your app?</text>
+</svg>

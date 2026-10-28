@@ -1,0 +1,8 @@
+/composedrill
+/bin/
+/dist/
+.composedrill/
+recovery-manifest.json
+.DS_Store
+
+/artifacts/
