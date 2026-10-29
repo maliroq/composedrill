@@ -6,9 +6,7 @@
 
 **Your backup passed. Will your app?**
 
-ComposeDrill restores a Docker Compose workload into an isolated rehearsal environment, restores persistent state, starts the stack, and runs real health checks. If the application does not come back, the drill fails.
-
-**Production data paths stay untouched.** ComposeDrill writes only its own `.composedrill/` workspace beneath the rehearsal root and creates disposable, run-labeled Docker resources for the drill.
+**A successful backup is not proof of recovery.** ComposeDrill restores a Docker Compose workload into an isolated rehearsal environment, restores persistent state, starts the stack, and runs real health checks. If the application does not come back healthy, the drill fails.
 
 ![ComposeDrill broken-recovery terminal demo](assets/terminal-hero.png)
 
@@ -21,7 +19,7 @@ APPLICATION HEALTH       FAIL
 RESULT                   FAIL
 ```
 
-**A backup existing is not proof that the application is recoverable.**
+**Containers running is not enough. The application itself has to recover.**
 
 ComposeDrill is a recovery-rehearsal CLI. It is not a backup scheduler, storage backend, Docker dashboard, or Restic/Kopia replacement.
 
