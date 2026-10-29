@@ -25,6 +25,58 @@ RESULT                   FAIL
 
 ComposeDrill is a recovery-rehearsal CLI. It is not a backup scheduler, storage backend, Docker dashboard, or Restic/Kopia replacement.
 
+## Install
+
+### Homebrew (macOS)
+
+```bash
+brew install maliroq/tap/composedrill
+```
+
+You do not need Go installed beforehand; Homebrew supplies the build dependency and builds ComposeDrill from the tagged source release.
+
+### Go install
+
+With Go 1.23 or newer:
+
+```bash
+go install github.com/maliroq/composedrill/cmd/composedrill@v0.1.0-preview
+```
+
+The binary is written to `GOBIN`, or to `$(go env GOPATH)/bin` when `GOBIN` is unset.
+
+### Release archives
+
+Direct archives remain available for Linux, offline/manual installs, and users who do not use Homebrew or Go:
+
+| Platform | Archive |
+| --- | --- |
+| macOS Apple Silicon | `composedrill_0.1.0-preview_darwin_arm64.tar.gz` |
+| macOS Intel | `composedrill_0.1.0-preview_darwin_amd64.tar.gz` |
+| Linux x86-64 | `composedrill_0.1.0-preview_linux_amd64.tar.gz` |
+| Linux arm64 | `composedrill_0.1.0-preview_linux_arm64.tar.gz` |
+
+Download the archive and `checksums.txt` from the [v0.1.0-preview release](https://github.com/maliroq/composedrill/releases/tag/v0.1.0-preview). See [`docs/INSTALL.md`](docs/INSTALL.md) for checksum and manual-install commands.
+
+**Validation boundary:** the final real-Docker release gate was run on macOS arm64 with Docker Desktop. The other packaged architectures are build targets and are not presented as equivalent real-Docker platform validation.
+
+## First run
+
+Start with the read-only commands:
+
+```bash
+composedrill scan ./homelab
+composedrill plan ./homelab
+```
+
+When you have prepared a checksummed recovery bundle, preview the rehearsal before creating Docker resources:
+
+```bash
+composedrill rehearse --backup ./recovery-bundle --dry-run ./homelab
+```
+
+`scan` and `plan` change nothing. The dry run validates and plans the recovery rehearsal without creating Docker resources.
+
 ## Why backup verification is not enough
 
 A backup job can finish successfully while recovery is still broken:
@@ -37,54 +89,6 @@ A backup job can finish successfully while recovery is still broken:
 - the restore procedure depends on undocumented manual steps.
 
 ComposeDrill asks the next question: **can this Compose application be reconstructed from the supplied recovery bundle and prove that it works?**
-
-## Quick start
-
-### Install a release binary
-
-Download the archive for your platform from GitHub Releases, verify it against `checksums.txt`, then install the `composedrill` binary somewhere on your `PATH`.
-
-macOS arm64 example:
-
-```bash
-ARCHIVE="composedrill_0.1.0-preview_darwin_arm64.tar.gz"
-
-grep "$ARCHIVE\$" checksums.txt | shasum -a 256 -c -
-
-tar -xzf "$ARCHIVE"
-
-mkdir -p "$HOME/.local/bin"
-install -m 0755 composedrill "$HOME/.local/bin/composedrill"
-
-"$HOME/.local/bin/composedrill" version
-```
-
-Or build from source with Go 1.23+:
-
-```bash
-go build -trimpath -buildvcs=false -o composedrill ./cmd/composedrill
-```
-
-Then:
-
-```bash
-# Read-only inventory and readiness findings
-composedrill scan ./homelab
-
-# Read-only human recovery plan
-composedrill plan ./homelab
-
-# Portable facts about current Compose state
-composedrill manifest --output recovery-manifest.json ./homelab
-
-# Validate the bundle and preview the drill
-composedrill rehearse --backup ./recovery-bundle --dry-run ./homelab
-
-# Run the isolated recovery rehearsal
-composedrill rehearse --backup ./recovery-bundle ./homelab
-```
-
-`scan`, `plan`, and `manifest` are read-only. `rehearse` requires Docker Compose v2 and a running Docker daemon.
 
 ## How a drill works
 
@@ -153,6 +157,12 @@ Docker is still not treated as a hardened security sandbox. Untrusted images bel
 
 Read [`docs/SAFETY.md`](docs/SAFETY.md) and [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md) before using `rehearse` on an important host.
 
+After reviewing the safety model and the dry run, run the real rehearsal:
+
+```bash
+composedrill rehearse --backup ./recovery-bundle ./homelab
+```
+
 ## Known limitations
 
 The limits are part of the product contract, not footnotes:
@@ -181,7 +191,7 @@ The report records the run namespace, Compose and bundle hashes, per-service con
 
 The repository also includes [`docs/SAMPLE_RECOVERY_REPORT.json`](docs/SAMPLE_RECOVERY_REPORT.json).
 
-## Installation and releases
+## Release packaging and validation
 
 Official preview archives are built as static Go binaries for:
 
@@ -222,4 +232,4 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) and the **Application recovery fixture*
 - [Release validation](docs/DOCKER_VALIDATION.md)
 - [Roadmap](docs/ROADMAP.md)
 
-License: Apache-2.0.
+License: MIT.
